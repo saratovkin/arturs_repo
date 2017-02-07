@@ -1,0 +1,11 @@
+commit 3b8d1ede49f059376f5d0d7f75a0b103e10ddfac
+Author: artur.saratovkin <svrvtwkxxn@gmail.com>
+Date:   Tue Feb 7 21:46:32 2017 +0300
+
+    add task1/status.txt
+
+commit e9da81ea49b8994431f563eef7f57bb196f29076
+Author: artur.saratovkin <svrvtwkxxn@gmail.com>
+Date:   Tue Feb 7 21:44:32 2017 +0300
+
+    add .gitignore
