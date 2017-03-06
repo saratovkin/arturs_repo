@@ -1,46 +1,18 @@
 
-body {
+
+body{
     margin:  -20px -20px;
     background-color: white;
     text-align: center;  
-    width: 100%;
+    width: 102%;
     overflow-x: hidden;
-    
 }
 
-.header li{
- 
-    margin-bottom: 10%;
-    top: 2px;
-    width: 10%;
-    display: inline-block;
-    font-family: 'Roboto',sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-    padding:15px;
-    overflow:hidden;
-}
-
-.header img{
-    text-align: center;
-    padding: 15px;
-}
-
-.header a:hover{
-    background-color: #DBE9EB;
-    padding: 4px;
-}
-
-.head {
-    margin 0 210px;
+.head{
     text-align: center;
     margin 10%;
     left:0px;
     width:100%;
-    height:50px;
     min-height: 40px;
 }
 
@@ -50,26 +22,44 @@ body {
     position:fixed;
     background-color:white;
     text-align:center;
-    height:10%;
+    height:15%;
     padding-top:10px;
     z-index: 999;
-    min-height: 140px;
+    height: 20%;
 }
 
-.login{
-    
-    width: 20%;
-    float: right;
-}
 
-.login h2{
-    top:-50px ;
+.header li{
+ 
+    width: 10%;
+    display: inline-block;
+    padding:1%;
+    overflow:hidden;
+    transition: background-color 0.8s 0s ease;
+}
+.navigation li{
     font-family: 'Roboto',sans-serif;
-    font-size: 10px;
+    font-size:1.4vw;
     font-weight: 100;
-    width: 100%;
-    font-size: 100;
-   
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.header li:hover{
+     background-color: #DBE9EB;
+}
+
+.header img{
+    text-align: center;
+    padding-top: 15px;
+    width: 20vw;
+    min-width: 140px;
+    max-width: 200px;
+}
+
+.error a{
+    text-decoration: underline;
+    text-decoration-style: solid;
 }
 
 a{
@@ -80,13 +70,13 @@ a{
 a:visited{
     color: black;
 }
+
 a:active{
     color: black;
 }
 
 .content-box {
     text-align:center;
-    background: rgba(255, 255, 255, 0.9);
     height: 100%;
     margin: 0 auto;
     position: relative;
@@ -99,6 +89,10 @@ a:active{
     top: 10px;
     margin: 0 auto;
     width: 80%;
+}
+
+.error h1{
+    line-height: 2;
 }
 .preview-picture {
     width: 100%;
@@ -171,35 +165,30 @@ td.rightcol {
     text-align: right;
 }
 
-.next-page h1{
+.down-buttons h1{
     margin-bottom:5%;
      color: black;
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 40px; //1.8vw
     font-weight: 300;
     position: relative;
     text-transform: uppercase;
-    top: px;
     width: 30%;
 }
-.next-page h1:hover{
+.down-buttons h1:hover{
     background-color:#DBE9EE;
 }
-.footer{
-    
-    top:20%;
-    padding-top: 5%; ;
+.footer,.error-f{
     background-color: black;
-    height: 100px;
     margin: 0 auto;
     position: relative;
-    width: 102%;
+    width: 104%;
 }
 
 
 
 .footer li,h2{
-    margin-bottom:px;
+    margin-top:20px;
     width: 200px;
     display: inline-block;
     font-family: 'Roboto',sans-serif;

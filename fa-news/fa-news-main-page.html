@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script type="text/javascript" src="js/script.js"></script>
+<script> 
+    console.log(addArticle({
+        id: -1,
+        title: 'Новая новость',
+        author: 'swooqy',
+        content: 'add content here',
+        tags: ["Мода"],
+        createdAt: new Date('2015-03-25T23:00:00'),
+        summary: ''
+    }));
+    console.log(getArticle(1));
+    editArticle(1,{
+        title: 'edited title',
+        content: 'edited content',
+        summary: 'edited summary'
+    });
+    console.log(getArticle(1));
+    console.log(getArticles(0,8));   
+    console.log(removeArticle(6));
+</script>
   <title>/fa/news</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100|Oswald:300,400,700|Adamina:100,300" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style.css">
+    
 </head>
 <body>
-
-<div class="head">
-    <div class="header" >
-        <img src="https://pp.vk.me/c626516/v626516191/57696/8cBdehxpAi4.jpg" width="180px">
-        <div class="login">
-            
+    <div class="head">
+        <div class="header" >
+            <a href="fa-news-main-page.html"><img src="http://www.imgup.ru/images2/21q8x6201212.png" width="180px"></a>
+            <div class="navigation">
+                    <ul>
+                        <li><a href="fa-news-error-page.html" >Войти</a>
+                        <li><a href="fa-news-error-page.html" >Новости</a></li>
+                        <li><a href="fa-news-error-page.html" >Мода</a></li>
+                        <li><a href="fa-news-error-page.html" >Обувь</a></li>
+                        <li><a href="fa-news-error-page.html" >Музыка</a></li>
+                        <li><a href="fa-news-error-page.html" >Искусство</a></li>
+                    </ul>
+            </div>
         </div>
-        <ul>
-            <li><a href="#" >Войти</a>
-            <li><a href="#" >Новости</a></li>
-            <li><a href="#" >Мода</a></li>
-            <li><a href="#" >Sneakerhead</a></li>
-            <li><a href="#" >Музыка</a></li>
-            <li><a href="#" >Искусство</a></li>
-        </ul>
     </div>
-    </div>
-
-    
-    
-    
-  <div class="content-box">
+    <div class="content-box">
     <div class="content-header">
       <h1>Первый взгляд на коллекцию Palace SS17</h1>
     </div>
@@ -39,19 +55,20 @@
         <table class="text">
             <tr>
                 <td>
-                    Тэги:<a href="#">мода</a>
+                    Тэги:<a href="fa-news-error-page.html">мода</a>
                 </td>
                 <td class="rightcol">
                     Автор:saratovkin
                 </td>
             </tr>
+            <tr>
                 <td>
-                     <a href="#" >Подробнее</a>
+                     <a href="fa-news-error-page.html" >Подробнее</a>
                 </td>
                 <td class ="rightcol">
-                    23 Февраля
+                    23 Февраля 2017
                 </td>
-            <tr>
+            
                 
             </tr>
         </table>
@@ -70,17 +87,17 @@
           <table class="text">
             <tr>
                 <td>
-                    Тэги:<a href="#">мода</a>,<a href="#">искусство</a>
+                    Тэги:<a href="fa-news-error-page.html">мода</a>,<a href="fa-news-error-page.html">искусство</a>
                 </td>
                 <td class="rightcol">
                     Автор:saratovkin
                 </td>
             </tr>
                 <td>
-                     <a href="#" >Подробнее</a>
+                     <a href="fa-news-error-page.html" >Подробнее</a>
                 </td>
                 <td class ="rightcol">
-                    23 Февраля
+                    23 Февраля 2017
                 </td>
             <tr>
                 
@@ -102,17 +119,17 @@
             <table class="text">
             <tr>
                 <td>
-                    Тэги:<a href="#">sneakerhead</a>,<a href="#">мода</a>
+                    Тэги:<a href="fa-news-error-page.html">обувь</a>,<a href="fa-news-error-page.html">мода</a>
                 </td>
                 <td class="rightcol">
                     Автор:saratovkin
                 </td>
             </tr>
                 <td>
-                     <a href="#" >Подробнее</a>
+                     <a href="fa-news-error-page.html" >Подробнее</a>
                 </td>
                 <td class ="rightcol">
-                    25 Февраля
+                    25 Февраля 2017
                 </td>
             <tr>
                 
@@ -134,17 +151,17 @@
            <table class="text">
             <tr>
                 <td>
-                    Тэги:<a href="#">мода</a>
+                    Тэги:<a href="fa-news-error-page.html">мода</a>
                 </td>
                 <td class="rightcol">
                     Автор:saratovkin
                 </td>
             </tr>
                 <td>
-                     <a href="#" >Подробнее</a>
+                     <a href="fa-news-error-page.html" >Подробнее</a>
                 </td>
                 <td class ="rightcol">
-                    26 Февраля
+                    26 Февраля 2017 
                 </td>
             <tr>
                 
@@ -166,17 +183,17 @@
            <table class="text">
             <tr>
                 <td>
-                    Тэги:<a href="#">музыка</a>
+                    Тэги:<a href="fa-news-error-page.html">музыка</a>
                 </td>
                 <td class="rightcol">
                     Автор:saratovkin
                 </td>
             </tr>
                 <td>
-                     <a href="#" >Подробнее</a>
+                     <a href="fa-news-error-page.html" >Подробнее</a>
                 </td>
                 <td class ="rightcol">
-                    26 Февраля
+                    26 Февраля 2017 
                 </td>
             <tr>
                 
@@ -198,17 +215,17 @@
            <table class="text">
             <tr>
                 <td>
-                    Тэги:<a href="#">мода</a><a href="#">искусство</a>
+                    Тэги:<a href="fa-news-error-page.html">мода</a>,<a href="fa-news-error-page.html">искусство</a>
                 </td>
                 <td class="rightcol">
                     Автор:saratovkin
                 </td>
             </tr>
                 <td>
-                     <a href="#" >Подробнее</a>
+                     <a href="fa-news-error-page.html" >Подробнее</a>
                 </td>
                 <td class ="rightcol">
-                    27 Февраля
+                    27 Февраля 2017 
                 </td>
             <tr>
                 
@@ -220,18 +237,18 @@
         
  
     <br><br><br><br> <br><br><br><br> 
-    <div class ="next-page">
-      <h1><a href="#">Следующая страница ->
+    <div class ="down-buttons">
+      <h1><a href="fa-news-error-page.html">Следующая страница ->
         </a></h1>
     </div>
     
   <div class="footer">
       
        <ul>
-      <li><a href="#" >о нас</a></li>
-      <li><a href="#" >контакты</a></li>
-      <li><a href="#" >вакансии</a></li>
-      <li><a href="#" >сотрудничество</a></li>
+      <li><a href="fa-news-error-page.html" >о нас</a></li>
+      <li><a href="fa-news-error-page.html" >контакты</a></li>
+      <li><a href="fa-news-error-page.html" >вакансии</a></li>
+      <li><a href="fa-news-error-page.html" >сотрудничество</a></li>
       </ul>
        <h2>© /FA/NEWS, 2017</h2>
   </div>
