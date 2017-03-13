@@ -1,55 +1,68 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
 
-
-body{
-    margin:  -20px -20px;
+body {
+    margin: -20px auto;
+    padding: 0;
     background-color: white;
-    text-align: center;  
-    width: 102%;
-    overflow-x: hidden;
-}
-
-.head{
     text-align: center;
-    margin 10%;
-    left:0px;
-    width:100%;
+    width: 100%;
+    overflow-x: hidden;
+    min-width: 400px;
+    min-height: 100%;
+    position: relative;
+}
+
+.head {
+    text-align: center;
+    width: 100%;
     min-height: 40px;
+    min-width: 400px;
 }
 
-.header{
-    width:102%;
-    margin:0 auto;
-    position:fixed;
-    background-color:white;
-    text-align:center;
-    height:15%;
-    padding-top:10px;
+.header {
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    background-color: white;
+    text-align: center;
+    padding-top: 10px;
     z-index: 999;
-    height: 20%;
+    max-height: 150px;
+    height: 18%;
+    min-height: 150px;
 }
 
-
-.header li{
- 
-    width: 10%;
+.header li {
+    width: 11.6%;
+/*    padding:1%;*/
+    background-color: white;
     display: inline-block;
-    padding:1%;
-    overflow:hidden;
+    overflow: hidden;
     transition: background-color 0.8s 0s ease;
 }
-.navigation li{
-    font-family: 'Roboto',sans-serif;
-    font-size:1.4vw;
+
+.header ul {
+    display: block;
+    -webkit-padding-start: 0px;
+    width: 100%;
+}
+
+.navigation li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4vw;
     font-weight: 100;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-.header li:hover{
-     background-color: #DBE9EB;
+.header li:hover {
+    background-color: #DBE9EB;
 }
 
-.header img{
+.header img {
     text-align: center;
     padding-top: 15px;
     width: 20vw;
@@ -57,32 +70,48 @@ body{
     max-width: 200px;
 }
 
-.error a{
+.error a {
     text-decoration: underline;
     text-decoration-style: solid;
 }
 
-a{
+a {
+    text-align: center;
     text-decoration: none;
     color: black;
 }
 
-a:visited{
+a:visited {
     color: black;
 }
 
-a:active{
+a:active {
     color: black;
 }
 
 .content-box {
-    text-align:center;
+    text-align: center;
     height: 100%;
     margin: 0 auto;
     position: relative;
     top: 110px;
-    width: 102%; 
+    width: 100%;
     overflow: hidden;
+    min-width: 400px;
+}
+
+.content-header h1, .error h1 {
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 40px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    text-transform: uppercase;
+    top: 17px;
+    width: 70%;
 }
 
 .content-body {
@@ -91,46 +120,47 @@ a:active{
     width: 80%;
 }
 
-.error h1{
+.error h1 {
     line-height: 2;
 }
+
 .preview-picture {
     width: 100%;
     height: 100%;
-    min-height: 50px
-    margin: 0; 
-    overflow: auto; 
-   }
-.preview-picture img { 
-    width: 90%; 
-    margin: 0 0 0 0; 
+    min-height: 50px;
+    margin: 0;
+    overflow: auto;
 }
 
+.preview-picture img {
+    width: 70%;
+    margin: 0 0 0 0;
+}
 
+.text a {
 
-.tag a{
     width: 500px;
     text-align: left;
     width: 3%;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
-    font-weight: 100;
+    font-weight: 400;
+    font-kerning: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
-    overflow:hidden;
+    overflow: hidden;
+    transition: background-color 0.8s 0s ease;
 }
 
-
-.tag a:hover{
-    background-color: #DBE9EE;
-    padding: 1px;
+.text a:hover{
+    background-color: #DBE9EB;
 }
 
-.tag h2{
-    
+.tag h2 {
+
     margin: -5px;
-    color:black;
-    font-family: 'Roboto',sans-serif;
+    color: black;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
     font-weight: 100;
     text-transform: uppercase;
@@ -140,81 +170,93 @@ a:active{
     text-align: left;
 }
 
-table.text  {
+table.text {
     text-align: left;
-    margin-left: 5%;
-    width:  90%;
+    margin-left: 15%;
+    width: 70%;
     border-spacing: 0;
 }
 
 table.text td {
-     margin: -5px;
-    color:black;
-    font-family: 'Roboto',sans-serif;
+    margin: -5px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 3px;
     height: 10%;
     width: 90%;
-    width: 10%; 
+    width: 10%;
     vertical-align: top;
 }
 
 td.rightcol {
+    color: darkgray;
     text-align: right;
 }
 
-.down-buttons h1{
-    margin-bottom:5%;
-     color: black;
+.down-buttons h1 {
+    transition: background-color 0.8s 0s ease;
+    margin-bottom: 5%;
+    color: black;
     font-family: 'Roboto', sans-serif;
-    font-size: 40px; //1.8vw
+    font-size: 1.8vw;
     font-weight: 300;
     position: relative;
     text-transform: uppercase;
     width: 30%;
 }
-.down-buttons h1:hover{
-    background-color:#DBE9EE;
+
+.down-buttons h1:hover {
+    background-color: #DBE9EE;
 }
-.footer,.error-f{
+
+.footer, .error-f {
     background-color: black;
     margin: 0 auto;
     position: relative;
-    width: 104%;
+    width: 100%;
 }
 
-
-
-.footer li,h2{
-    margin-top:20px;
+.footer li, h2 {
+    transition: background-color 0.8s 0s ease;
+    margin-top: 20px;
     width: 200px;
     display: inline-block;
-    font-family: 'Roboto',sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 100;
     color: black;
     letter-spacing: 2px;
     text-transform: uppercase;
-    overflow:hidden;
+    overflow: hidden;
 }
-.footer h2{
-    font-family: 'Roboto',s;
+
+.footer h2 {
+    font-family: 'Roboto', s;
     font-size: 5px;
     font-weight: 100;
     color: whitesmoke;
     letter-spacing: 2px;
     text-transform: uppercase;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.footer a{
-    color:white;
+.footer a {
+    color: white;
 }
 
-.footer li:hover{
+.footer li:hover {
     background-color: darkgrey;
+}
+
+.footer ul {
+    -webkit-padding-start: 0px;
+}
+
+.error-footer {
+    margin-top: 36%;
 }
 
 h1 {
