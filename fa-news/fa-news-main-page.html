@@ -23,253 +23,178 @@
        </script>-->
     <meta charset="UTF-8">
     <title>/fa/news</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400|Oswald:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400|Oswald:300" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
+
+<script src="js/script.js" type="text/javascript"></script>
+
 <div class="head">
     <div class="header">
-        <a href="fa-news-main-page.html"><img src="images/main_img.png" width="180px"></a>
+        <a onclick="contentService.openPageIndex"><img src="images/main_img.png" width="180px"></a>
         <div class="navigation">
-            <ul>
-                <li class="user"><a href="fa-news-error-page.html">Войти</a></li>
-                <li><a href="fa-news-error-page.html">Новости</a></li>
-                <li><a href="fa-news-error-page.html">Мода</a></li>
-                <li><a href="fa-news-error-page.html">Обувь</a></li>
-                <li><a href="fa-news-error-page.html">Музыка</a></li>
-                <li><a href="fa-news-error-page.html">Искусство</a></li>
-                <li class="add-news"><a href="fa-news-error-page.html">Добавить</a></li>
+            <ul id="nav">
+                <li>
+                    <a href="#login" class="user">Войти</a>
+                </li>
+                <li>
+                    <a href="#search">Поиск</a>
+                </li>
+                <li>
+                    <a onclick=" sortByFashion();scroll(0,0); return false">Мода</a>
+                </li>
+                <li>
+                    <a onclick=" sortBySneakers();scroll(0,0); return false">Обувь</a>
+                </li>
+                <li>
+                    <a onclick="sortByMusic();scroll(0,0); return false">Музыка</a>
+                </li>
+                <li>
+                    <a onclick="sortByArts();scroll(0,0); return false">Искусство</a>
+                </li>
+                <li class="add-news">
+                    <a href="#add">Добавить</a>
+                </li>
             </ul>
         </div>
     </div>
 </div>
 
-<br><br><br><br> <br><br>
+<div class="login-bar">
+    <a href="#x" class="overlay" id="login"></a>
+    <form class="popup login" id="login-input">
+        <p class="login-error">
+            <br>
+        </p>
+        <form>
+            <p>Логин</p>
+            <br>
+            <input type="text">
+            <p>Пароль</p>
+            <br>
+            <input type="password">
+            <br>
+            <a class="login-button" onclick="loginService.handleLogin()">
+                Войти
+            </a>
+            <a class="close" title="Закрыть" href="#close" onclick="loginService.handleCancel()"></a>
+        </form>
+    </form>
+</div>
+
+<div class="search-bar">
+    <a href="#x" class="overlay" id="search"></a>
+    <form class="popup search">
+        <br>
+        <p>Выберите дату:
+            <input type="date" id="search-date" value="" max="2020-12-31" min="2017-01-01">
+        </p>
+        <p>
+            Выберите автора:
+            <select class="search-authors">
+                <option class="author">author name here</option>
+            </select>
+        </p>
+        <p>
+            Выберите тему:
+            <select class="search-tag">
+                <option>Любая</option>
+                <option>Мода</option>
+                <option>Обувь</option>
+                <option>Музыка</option>
+                <option>Искусство</option>
+            </select>
+        </p>
+        <a class="login-button" onclick="filterService.apply()">
+            Поиск
+        </a>
+
+        <a class="close" title="Закрыть" href="#close" onclick="filterService.clear()"></a>
+    </form>
+</div>
+
+<div class="adding-bar">
+
+    <a href="#x" class="overlay" id="add"></a>
+    <div class="popup add">
+        <p class="add-error">
+            <br>
+        </p>
+
+        <p>
+            Введите заголовок новости:
+            <input type="text" id="titlebox">
+        </p>
+        <p>
+            Введите текст новости:
+            <input type="text" id="contentbox">
+        </p>
+        <p>
+            Введите ссылку на картинку:
+            <input type="text" id="imgbox">
+        </p>
+        <p>
+            Выберите тему:
+            <select id="tagbox">
+
+                <option>Мода</option>
+                <option>Обувь</option>
+                <option>Музыка</option>
+                <option>Искусство</option>
+            </select>
+        </p>
+        <a class="login-button" onclick="editService.handleAdd()">
+            Добавить
+        </a>
+        <a class="close" title="Закрыть" href="#close"></a>
+    </div>
+</div>
+
+<div class="edit-bar">
+
+    <a href="#x" class="overlay" id="edit"></a>
+    <div class="popup edit">
+        <p class="add-error">
+            <br>
+        </p>
+
+        <p>
+            Введите заголовок новости:
+            <input type="text" id="edit-titlebox">
+        </p>
+        <p>
+            Введите текст новости:
+            <input type="text" id="edit-contentbox">
+        </p>
+        <p>
+            Введите ссылку на картинку:
+            <input type="text" id="edit-imgbox">
+        </p>
+
+        <a class="edit-button" onclick="editService.handleEdit()">
+            Изменить
+        </a>
+        <a class="close" title="Закрыть" href="#close"></a>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
 
 <div class="article-list"></div>
 
-<!--<div class="content-box">
-    <div class="content-header">
-        <h1>Первый взгляд на коллекцию Palace SS17</h1>
-    </div>
-    <div class="content-body">
-        <div class="preview-picture">
-            <img class="preview"
-                 src="http://static.highsnobiety.com/wp-content/uploads/2017/02/17125159/palace-ss17-collection-00.jpg">
-        </div>
-        <div class="tag">
-            <table class="text">
-                <tr>
-                    <td>
-                        Тэги:<a href="fa-news-error-page.html">мода</a>
-                    </td>
-                    <td class="rightcol">
-                        Автор:saratovkin
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="fa-news-error-page.html">Подробнее</a>
-                    </td>
-                    <td class="rightcol">
-                        23 Февраля 2017
-                    </td>
-
-
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="content-box">
-    <div class="content-header">
-        <h1>Неделя моды в Милане: Февраль 2017</h1>
-    </div>
-    <div class="content-body">
-        <div class="preview-picture">
-            <img src="https://i1.wp.com/hypebeast.com/image/2017/02/streetsnaps-milan-fashion-week-february-2017-1.jpeg?w=2369">
-        </div>
-        <div class="tag">
-            <table class="text">
-                <tr>
-                    <td>
-                        Тэги:<a href="fa-news-error-page.html">мода</a>,<a href="fa-news-error-page.html">искусство</a>
-                    </td>
-                    <td class="rightcol">
-                        Автор:saratovkin
-                    </td>
-                </tr>
-                <td>
-                    <a href="fa-news-error-page.html">Подробнее</a>
-                </td>
-                <td class="rightcol">
-                    23 Февраля 2017
-                </td>
-                <tr>
-
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="content-box">
-    <div class="content-header">
-        <h1>Официальный список ретейлеров Yeezy Boost 350 v2 Zebra</h1>
-    </div>
-    <div class="content-body">
-        <div class="preview-picture">
-            <img src="https://i1.wp.com/hypebeast.com/image/2017/02/yeezy-boost-350-v2-zebra-store-list-1.jpg?w=2369">
-        </div>
-        <div class="tag">
-            <table class="text">
-                <tr>
-                    <td>
-                        Тэги:<a href="fa-news-error-page.html">обувь</a>,<a href="fa-news-error-page.html">мода</a>
-                    </td>
-                    <td class="rightcol">
-                        Автор:saratovkin
-                    </td>
-                </tr>
-                <td>
-                    <a href="fa-news-error-page.html">Подробнее</a>
-                </td>
-                <td class="rightcol">
-                    25 Февраля 2017
-                </td>
-                <tr>
-
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="content-box">
-    <div class="content-header">
-        <h1>Совместная коллекция BAPE x 'Kong: Skull Island" </h1>
-    </div>
-    <div class="content-body">
-        <div class="preview-picture">
-            <img src="https://i1.wp.com/hypebeast.com/image/2017/02/bape-kong-skull-island-collection-2.jpg?w=1382">
-        </div>
-        <div class="tag">
-            <table class="text">
-                <tr>
-                    <td>
-                        Тэги:<a href="fa-news-error-page.html">мода</a>
-                    </td>
-                    <td class="rightcol">
-                        Автор:saratovkin
-                    </td>
-                </tr>
-                <td>
-                    <a href="fa-news-error-page.html">Подробнее</a>
-                </td>
-                <td class="rightcol">
-                    26 Февраля 2017
-                </td>
-                <tr>
-
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="content-box">
-    <div class="content-header">
-        <h1>Новый релиз A$AP Rocky и 808 Mafia's Southside на подходе </h1>
-    </div>
-    <div class="content-body">
-        <div class="preview-picture">
-            <img src="https://i1.wp.com/hypebeast.com/image/2017/02/asap-rocky-southside-808-mafia-collab.jpg?w=2369">
-        </div>
-        <div class="tag">
-            <table class="text">
-                <tr>
-                    <td>
-                        Тэги:<a href="fa-news-error-page.html">музыка</a>
-                    </td>
-                    <td class="rightcol">
-                        Автор:saratovkin
-                    </td>
-                </tr>
-                <td>
-                    <a href="fa-news-error-page.html">Подробнее</a>
-                </td>
-                <td class="rightcol">
-                    26 Февраля 2017
-                </td>
-                <tr>
-
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-
-<div class="content-box">
-    <div class="content-header">
-        <h1>Взгляд на Anti Social Social Club x Modernica</h1>
-    </div>
-    <div class="content-body">
-        <div class="preview-picture">
-            <img src="https://i1.wp.com/hypebeast.com/image/2017/02/anti-social-social-club-modernica-eiffel-side-shell-chair-1.jpg?w=2369">
-        </div>
-        <div class="tag">
-            <table class="text">
-                <tr>
-                    <td>
-                        Тэги:<a href="fa-news-error-page.html">мода</a>,<a href="fa-news-error-page.html">искусство</a>
-                    </td>
-                    <td class="rightcol">
-                        Автор:saratovkin
-                    </td>
-                </tr>
-                <td>
-                    <a href="fa-news-error-page.html">Подробнее</a>
-                </td>
-                <td class="rightcol">
-                    27 Февраля 2017
-                </td>
-                <tr>
-
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>-->
-
-<br><br><br><br> <br><br><br><br>
-<div class="down-buttons">
-    <h1><a href="fa-news-error-page.html">Следующая страница ->
-    </a></h1>
-</div>
-
-<div class="footer">
-
-    <ul>
-        <li><a href="fa-news-error-page.html">о нас</a></li>
-        <li><a href="fa-news-error-page.html">контакты</a></li>
-        <li><a href="fa-news-error-page.html">вакансии</a></li>
-        <li><a href="fa-news-error-page.html">сотрудничество</a></li>
-    </ul>
-    <h2>© /FA/NEWS, 2017</h2>
-</div>
-
-
 <template id="template-article-list-item">
     <div class="article-list-item" data-id="id">
-        <a href="fa-news-error-page.html">
+        <a onclick="contentService.openPageFull(this.parentNode),scroll(0,0)">
             <h1 class="article-list-item-title">
                 заголовок
             </h1>
         </a>
+        <br>
         <div class="preview-picture">
-            <a href="fa-news-error-page.html"><img class="preview article-list-item-img" src="картинка"></a>
+            <a onclick="contentService.openPageFull(this.parentNode.parentNode),scroll(0,0)"><img
+                    class="preview article-list-item-img" src="картинка"></a>
         </div>
         <p class="article-list-item-summary">
             пока оно будет пустым
@@ -278,7 +203,6 @@
             <table class="text">
                 <tr>
                     <td class="article-list-item-tags">
-                        <!--Тэги:<a class="article-list-item-tags" href="fa-news-error-page.html">мода</a>,<a href="fa-news-error-page.html">искусство</a>-->
                     </td>
                     <td class="rightcol">
                         <div class="article-list-item-author"></div>
@@ -286,25 +210,94 @@
                 </tr>
                 <tr>
                     <td class="button">
-                        <a class="edit" href="fa-news-error-page.html">Изменить</a>
+                        <a class="editing"
+                           onclick="editService.setEdited(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode)"
+                           href="#edit">Изменить</a>
                     </td>
                     <td class="rightcol article-list-item-date">
-                        дата
                     </td>
                 </tr>
                 <tr>
                     <td class="button">
-                        <a class="edit" href="fa-news-error-page.html">Удалить</a>
+                        <a class="editing"
+                           onclick="editService.handleDelete(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode),scroll(0,0)">Удалить</a>
                     </td>
                     <td class="rightcol button">
-                        <a href="fa-news-error-page.html">Подробнее</a>
+                        <a onclick="contentService.openPageFull(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode),scroll(0,0)">Подробнее</a>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
 </template>
-<script src="js/script.js" type="text/javascript"></script>
 
+<div id="full-post" class="full" data-id="id">
+
+    <h1 class="full-post-title">
+        заголовок
+    </h1>
+
+    <br>
+
+    <img class="full-post-img">
+
+
+    <h2 class="full-post-content">
+
+    </h2>
+
+    <table class="full-post-text">
+        <tr>
+            <td class="full-post-date">
+
+            </td>
+            <td class="full-post-author rightcol">
+            </td>
+        </tr>
+        <tr class="full-post-edit-box">
+            <td class="full-post-edit">
+                изменить
+            </td>
+            <td class="rightcol">
+                <a class="delete-button"
+                   onclick="editService.handleDelete(this.parentNode.parentNode.parentNode.parentNode.parentNode)">удалить</a>
+            </td>
+        </tr>
+
+    </table>
+
+    <p class="full-post-back" onclick="contentService.openPageIndex(),scroll(0,0)"> назад </p>
+
+
+</div>
+
+<div class="error">
+    <h1>
+
+    </h1>
+</div>
+
+<div id="down-buttons">
+    <a id="pagination-back" onclick="articleRendererService.paginateBack(),scroll(0,0)">
+        Назад
+    </a>
+
+
+    <a id="pagination-forward" onclick="articleRendererService.paginateForward(),scroll(0,0)">
+        Вперед
+    </a>
+
+</div>
+
+<div class="footer">
+    <ul>
+        <li><a href="#">эти</a></li>
+        <li><a href="#">кнопки</a></li>
+        <li><a href="#">не работают</a></li>
+    </ul>
+    <h2>
+        © /FA/NEWS, 2017
+    </h2>
+</div>
 
 </body>

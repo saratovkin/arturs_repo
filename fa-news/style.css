@@ -19,7 +19,7 @@ body {
     text-align: center;
     width: 100%;
     min-height: 40px;
-    min-width: 400px;
+
 }
 
 .header {
@@ -33,11 +33,11 @@ body {
     max-height: 150px;
     height: 18%;
     min-height: 150px;
+
 }
 
 .header li {
     width: 11.6%;
-/*    padding:1%;*/
     background-color: white;
     display: inline-block;
     overflow: hidden;
@@ -54,7 +54,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.4vw;
     font-weight: 100;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
     text-transform: uppercase;
 }
 
@@ -68,6 +68,10 @@ body {
     width: 20vw;
     min-width: 140px;
     max-width: 200px;
+}
+
+.error {
+    display: none;
 }
 
 .error a {
@@ -89,9 +93,13 @@ a:active {
     color: black;
 }
 
+.login {
+    display: none;
+}
+
 .content-box {
     text-align: center;
-    height: 100%;
+    height: 200px;
     margin: 0 auto;
     position: relative;
     top: 110px;
@@ -152,7 +160,7 @@ a:active {
     transition: background-color 0.8s 0s ease;
 }
 
-.text a:hover{
+.text a:hover {
     background-color: #DBE9EB;
 }
 
@@ -186,30 +194,109 @@ table.text td {
     text-transform: uppercase;
     letter-spacing: 3px;
     height: 10%;
-    width: 90%;
-    width: 10%;
+    width: 50%;
     vertical-align: top;
+}
+
+.full-post-text {
+    text-align: left;
+    margin: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    font-kerning: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: background-color 0.8s 0s ease;
+}
+
+p.full-post-back {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8vw;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+table.full-post-text td {
+    margin: -5px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    height: 15%;
+    vertical-align: top;
+    width: 300px;
+}
+
+table.full-post-text {
+    text-align: left;
+    margin-left: 15%;
+    width: 70%;
+    border-spacing: 0;
 }
 
 td.rightcol {
     color: darkgray;
     text-align: right;
+    width: 40%;
 }
 
-.down-buttons h1 {
-    transition: background-color 0.8s 0s ease;
-    margin-bottom: 5%;
-    color: black;
+.article-list-item-date {
+    width: 100px;
+}
+
+.full-post-img {
+    width: 100%;
+}
+
+.full-post-content {
+    width: 75%;
+}
+
+#full-post {
+    display: none;
+}
+
+a.delete-button {
+    margin-left: 100%;
+}
+
+#down-buttons {
+
+    text-decoration: underline;
+    margin-left: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 70%;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.8vw;
+    font-size: 1.4vw;
     font-weight: 300;
-    position: relative;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    width: 30%;
 }
 
-.down-buttons h1:hover {
-    background-color: #DBE9EE;
+#pagination-back {
+    display: inline;
+    float: left;
+}
+
+#pagination-back:hover {
+    color: #DBE9EB;
+    cursor: pointer;
+}
+
+#pagination-forward {
+    display: inline;
+    float: right;
+}
+
+#pagination-forward:hover {
+    color: #DBE9EB;
+    cursor: pointer;
 }
 
 .footer, .error-f {
@@ -225,7 +312,7 @@ td.rightcol {
     width: 200px;
     display: inline-block;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 1.4vw;
     font-weight: 100;
     color: black;
     letter-spacing: 2px;
@@ -272,3 +359,124 @@ h1 {
     top: 17px;
     width: 70%;
 }
+
+.overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    position: fixed;
+    cursor: default;
+}
+
+.overlay:target {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.popup {
+    top: -100%;
+    right: 0;
+    left: 50%;
+    z-index: 1000;
+    margin: 0;
+    position: fixed;
+    padding: 15px 0px;
+    background: #fefefe;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, .22), 0 19px 60px rgba(0, 0, 0, .3);
+    transform: translate(-50%, -500%);
+}
+
+.search {
+    width: 50%;
+    height: 220px;
+    min-width: 600px;
+}
+
+.add {
+    width: 50%;
+    height: 400px;
+}
+
+.login {
+    width: 30%;
+    height: 25%;
+    display: block;
+}
+
+.edit {
+    height: 50%;
+}
+
+.popup input, select {
+    padding: 0;
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 15px;
+    border: none;
+    background-color: #fefefe;
+    text-transform: uppercase;
+    margin-bottom: 5%;
+    transition: background-color 0.8s 0s ease;
+}
+
+.popup input:hover, select:hover {
+    background-color: #DBE9EB;
+}
+
+.overlay:target + .popup {
+    transform: translate(-50%, 0%);
+    top: 20%;
+}
+
+.popup p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    text-transform: uppercase;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    transition: background-color 0.8s 0s ease;
+}
+
+.popup a {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: background-color 0.8s 0s ease;
+}
+
+.login-button:hover {
+    background-color: #DBE9EB;
+}
+
+.close {
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.close:before {
+    content: "x";
+    font-family: Roboto;
+    font-size: 15px;
+}
+
+.close:hover {
+    color: #DBE9EE;
+}
+
+
